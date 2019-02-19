@@ -10,3 +10,9 @@ const text = fs.readFileSync("to/path/xxx.txt", "utf-8");
 const text = fs.readFileSync("to/path/xxx.txt");
 ```
 
+# fs.writeFileSync
+
+```
+// ファイルの書き込み
+fs.writeFileSync("./output.txt", text);
+```
