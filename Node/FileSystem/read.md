@@ -12,7 +12,7 @@ const text = fs.readFileSync("to/path/xxx.txt");
 
 # fs.writeFileSync
 
-```
-// ファイルの書き込み
-fs.writeFileSync("./output.txt", text);
+```js
+// ファイルの書き込み、エンコーディングは指定しないとデフォルトでutf8
+fs.writeFileSync("./output.txt", text, "utf8");
 ```
