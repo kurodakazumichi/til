@@ -79,6 +79,13 @@ window.num = 0;
 window.fun = () => {};
 ```
 
+## React,ReactDOMの型定義ファイル
+
+```shell
+yarn add @types/react
+yarn add @types/react-dom
+```
+
 # Parcel
 
 ## SCSSに対応する
