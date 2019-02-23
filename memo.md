@@ -12,3 +12,11 @@ image.onload = function() {
   isLoadedImage = true;
 }
 ```
+
+# Konva　Serialisation
+
+Konvaの各種Nodeは`toJSON()`でシリアライズできる。
+
+```js:sample.js
+node.toJSON();
+```
