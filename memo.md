@@ -78,3 +78,20 @@ declare var window:Window;
 window.num = 0;
 window.fun = () => {};
 ```
+
+# Parcel
+
+## SCSSに対応する
+
+`sass`を入れてjs内で`import`するだけ。
+
+https://parceljs.org/scss.html
+```shell
+npm install -D sass
+# or
+yarn add -d sass
+```
+
+```js
+import './custom.scss'
+```
