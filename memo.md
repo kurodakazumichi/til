@@ -20,3 +20,17 @@ Konvaの各種Nodeは`toJSON()`でシリアライズできる。
 ```js:sample.js
 node.toJSON();
 ```
+
+# TypeScript EventHandlerの型定義
+
+elemmentのイベントコールバックを指定するときの型定義
+
+```ts:sample.js
+interface HTMLElementEvent<T extends HTMLElement> extends Event {
+  target: T;
+}
+
+element.addEventListener('click', (event:HTMLElementEvent<HTMLInputElement>) => {
+  console.log(event.target.value);
+});
+```
