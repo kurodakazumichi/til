@@ -69,7 +69,7 @@ element.addEventListener('click', (event:HTMLElementEvent<HTMLInputElement>) => 
  */
 interface Window {
   num : number;
-  fun : function():void;
+  fun : () => void;
 }
 // 定義
 declare var window:Window;
