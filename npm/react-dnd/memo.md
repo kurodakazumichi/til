@@ -32,3 +32,21 @@ class MyComponent {
   /* ... */
 }
 ```
+
+## DropTargetの引数
+
+### types(必須)
+`string`か`ES6 symbol`、もしくはこのどちらかの配列か、これを返す関数(引数にpropsをもらう)。
+DropTargetは、このtypesが一致するドラッグアイテムにのみ反応する。
+
+### spec(必須)
+ドラッグ&ドロップに関するメソッドを持ったJavaScriptオブジェクト。
+
+### collect(必須)
+ドロップ要素の情報を返すメソッドを定義する。
+ここで返す情報はドラッグ側で取得して扱える。
+`connect`と`monitor`の２つの引数を受け取ります。
+
+### options(任意)
+
+
