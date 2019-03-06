@@ -50,3 +50,33 @@ tsconfig.jsonの`compileOptions.types`に`jest`を加える
 }
 ```
 
+# VS Code
+
+## コマンドラインにパスを登録する
+
+VSCodeを起動する
+Commannd + Shift + P
+Command Paletteで検索
+
+Shell Command: Install 'code' command in PATHとあるので
+これを実行するとVSCodeのパスが設定される
+
+あとはターミナルで
+
+```shell
+code .
+```
+とかすればOK
+
+
+
+
+
+
+
+
+
+
+
+
+
