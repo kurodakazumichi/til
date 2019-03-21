@@ -68,6 +68,19 @@ code .
 ```
 とかすればOK
 
+# レスポンシブ対応
+
+Chromeのモバイルエミュレーターでレスポンシブ(media query)が反応しない現象が起きた
+
+- ブラウザ自体のサイズを変更する ＝　ちゃんとレスポンシブする
+- ブラウザはフルスクリーンでモバイルエミュレーターでサイズを変える　＝　レスポンシブしない
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+```
+
+これはmetaタグでviewportを指定することで解決した。
+
 
 
 
