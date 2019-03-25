@@ -1,3 +1,7 @@
+# markdown-itのrules一覧
+
+https://github.com/markdown-it/markdown-it/blob/master/lib/presets/commonmark.js
+
 # 画像が読み込まれるのを待つ
 
 Imageのonloadを使って画像の読み込みを判定する。
