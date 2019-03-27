@@ -73,6 +73,11 @@ terminalにて`jest`を実行する。
 `yarn jest --coverage`
 これでカバレッジが表示される
 
+`yarn jest --watch`
+これでwatch状態になる
+
+`yarn jest hoge`
+パスにhogeという文字列が含まれるテストが対象になる
 
 # スニペット
 
