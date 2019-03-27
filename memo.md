@@ -1,3 +1,10 @@
+# 自分ルール
+
+TIL全体を通して使っている自分ルール
+
+- プロジェクトルートディレクトリを`root`と表記する
+
+
 # markdown-itのrules一覧
 
 https://github.com/markdown-it/markdown-it/blob/master/lib/presets/commonmark.js
