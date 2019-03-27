@@ -19,40 +19,7 @@ image.onload = function() {
 
 
 
-# Jest + TypeScript(Parcel環境)
 
-```shell
-yarn add -D typescript jest ts-jest @types/jest
-```
-
-package.jsonに以下の設定を加える
-```json:package.json
-  "jest": {
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ]
-  }
-```
-
-tsconfig.jsonの`compileOptions.types`に`jest`を加える
-```
-{
-  "compilerOptions": {
-    ...
-    "types": ["node", "jest"]
-    ...
-  }
-}
-```
 
 # VS Code
 
