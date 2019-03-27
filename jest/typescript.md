@@ -51,5 +51,21 @@ terminalにて`jest`を実行する。
 問題がなければテストが動く。
 
 
+`tsconfig.json`に`__tests__`フォルダのパスを通しておかないと
+インテリセンスでエラーが大量に出る。
 
+```diff
+{
+  "compilerOptions": {
+    ...
+  },
+  "include": [
+    "src/**/*",
++   "__tests__/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+  ]
+}
+```
 
