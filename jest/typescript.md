@@ -69,6 +69,14 @@ terminalにて`jest`を実行する。
 }
 ```
 
+## jest.config.jsとpackage.jsonに定義したjestのconfig
+package.jsonに設定を書いてしまうと
+jest.config.jsの内容が無視されるっぽい？
+
+## jest.config.jsの反映タイミング
+--watchなどで起動している間は設定を書き換えても反映され無い
+一度終了して再度jestを実行する必要がある
+
 
 `yarn jest --coverage`
 これでカバレッジが表示される
