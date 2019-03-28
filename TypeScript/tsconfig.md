@@ -150,6 +150,101 @@ module:commonjs
 
 ----------------------------------------------------------------------------------------
 
+### lib
+
+#### 概要
+
+コンパイルに含めるライブラリファイルを指定します。
+
+#### 設定可能な値
+
+- ES5
+- ES6
+- ES2015
+- ES7
+- ES2016
+- ES2017
+- DOM
+- DOM.Iterable
+- WebWorker
+- ScriptHost
+- ES2015.Core
+- ES2015.Collection
+- ES2015.Generator
+- ES2015.Iterable
+- ES2015.Promise
+- ES2015.Proxy
+- ES2015.Reflect
+- ES2015.Symbol
+- ES2015.Symbol.WellKnown
+- ES2016.Array.Include
+- ES2017.object
+- ES2017.SharedMemory
+
+#### 注意
+
+libが指定されなかった場合は、下記のようにデフォルトのライブラリが注入されます。
+
+**target ES5の場合**: 
+
+- DOM
+- ES5
+- ScriptHost
+
+**target ES6の場合**: 
+- DOM
+- ES6
+- DOM.Iterable
+- ScriptHost
+
+#### 効能
+
+今まではコンパイルで生成されるコードの結果に影響したけど
+このオプションはコンパイルそのものに関係するオプション。
+以下の例を見た方が早い
+
+
+**サンプルコード**
+```ts
+console.log("Hello World");
+```
+
+**["dom"]を指定した場合**
+
+問題なくコンパイルされる。
+
+**["es5"]を指定した場合**
+
+コードの`console`の部分に、`console`が見つからないと警告が出て、コンパイルができない。
+
+`console`は`dom`に定義されている？ようでこれを`lib`に含めておかないと
+コンパイラが`console`を認識できずにこける。
+
+------------------===========================
+
+### lib
+
+#### 概要
+
+
+#### 設定可能な値
+
+
+#### 効能
+
+
+**サンプルコード**
+
+```ts
+import * as Config from './config';
+```
+
+**"es2015"を指定した場合**
+
+
+**"commonjs"を指定した場合**
+
+
 
 
 
