@@ -124,13 +124,13 @@ let num = 0;
 import * as Config from './config';
 ```
 
-**"es2015"**を指定した場合
+**"es2015"を指定した場合**
 
 ```js
 import * as Config from './config';
 ```
 
-**"commonjs"**を指定した場合
+**"commonjs"を指定した場合**
 
 ```js
 "use strict";
