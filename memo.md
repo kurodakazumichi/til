@@ -67,6 +67,22 @@ Chromeのモバイルエミュレーターでレスポンシブ(media query)が�
 
 
 
+# yarn workspaceの罠
+
+## yarn workspaceを使っている時のyarn addコマンド
+
+プロジェクトのルートディレクトリのpackage.jsonにaddしたい場合は`-W`オプションが必要
+
+```bash
+yarn add -D [package-name] -W
+```
+
+## 特定のworkspaceを指定したい場合はこうなる:
+
+```bash
+yarn workspace [workspace-name] add [package-name] --dev
+```
+
 
 
 
