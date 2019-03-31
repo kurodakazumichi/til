@@ -77,7 +77,7 @@ typedoc ./src
 `typedoc.json`とは異なる名前でファイルを作成した場合は:
 
 ```bash
-typedoc ./src --option hoge.json
+typedoc ./src --options hoge.json
 ```
 
-のように`--option`を使って設定ファイルを指定する。
+のように`--options`を使って設定ファイルを指定する。
