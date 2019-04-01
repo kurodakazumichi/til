@@ -83,6 +83,14 @@ yarn add -D [package-name] -W
 yarn workspace [workspace-name] add [package-name] --dev
 ```
 
+## `yarn`した時のworkspaceの扱い
+
+workspaceを指定した状態で`yarn`を実行すると
+`node_modules`にはworkspaceで指定したパッケージのシンボリックリンクが作られる。
+公式には依存関係がない限り、`node_modules`にシンボリックリンクは作られないと書いてあったが
+どうも仕様が変わったようだ。
+
+まぁこれが問題になることは今の所ないので別にいい。
 
 
 
