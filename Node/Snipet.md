@@ -41,3 +41,11 @@ const list = fs
   .map(file => path.resolve(SOMETHING_DIR, file))
   .filter(f => fs.lstatSync(path.resolve(f)).isDirectory());
 ```
+
+# コマンドライン引数を受け取る
+
+```js
+// 配列の先頭２要素は実行パス、ファイルパスが入っているので飛ばして取得
+console.log(process.argv.slice(2));
+```
+
