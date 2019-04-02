@@ -93,5 +93,25 @@ workspaceを指定した状態で`yarn`を実行すると
 まぁこれが問題になることは今の所ないので別にいい。
 
 
+# 埋め込み型エディター Aceをnode.jsで使う
+
+```bash
+yarn add ace-builds
+```
+
+```typescript
+import Ace from 'ace-builds';
+
+const editor = Ace.edit(document.querySelector("selector string") as Element);
+
+// githubのテーマ、javascriptモード
+import ThemeGithub from 'ace-builds/src-noconflict/theme-github';
+import { Mode as JavaScriptMode } from 'ace-builds/src-noconflict/mode-javascript';
+
+// 設定はこうする
+editor.getSession().setUseWorker(false);
+editor.setTheme(ThemeGithub);
+editor.getSession().setMode(new JavaScriptMode());
+```
 
 
