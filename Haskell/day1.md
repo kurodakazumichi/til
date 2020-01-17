@@ -95,3 +95,47 @@ GHCiの中にファイルを読み込んだ時、ファイルにモジュール�
 
 - Haskellファイルを変更したら、リロードする必要がある。
 - リロードは`:reload`、または`:r`コマンドを使う。
+
+
+# Haskell:Hello WOrld program using ghc command
+
+- ghc compilerはGHCディストリビューションの一部として提供される。
+- `ghc`コマンドはHaskellファイルを受け取り、ネイティブコードを生成する。
+
+## コンパイル
+
+1. 以下のファイルを作成する
+```hs:hello_world.hs
+main = putStrLn("hello, world");
+```
+
+2. コンパイルする
+
+```bash
+stack ghc hello_world.hs
+```
+
+3. 以下、３つのファイルが出来上がる
+
+- hello_world
+- hello_world.hi
+- hello_world.o
+
+### hello_world
+実行ファイル
+
+### hello_world.hi
+これは単なるインターフェイスファイルであり、モジュールからエクスポートされた名前に関する情報を機械可読形式で保存します。
+この時点でモジュールについて心配する必要はありません。
+モジュールは、コードを論理的に整理するために使用されます。
+
+### hello_world.o
+マシンコードを含むオブジェクトファイル
+
+
+
+
+
+
+
+
