@@ -86,4 +86,91 @@ add abc
 これは慣習ではなく、Haskellによって強制されるルールです。
 
 
+# Haskell: Define variable at GHCi prompt
+
+- `let`キーワードを使う事でghciプロンプト上で変数を定義できる。
+
+```bash
+Prelude> let radius=10
+```
+
+# Haskell: Specifying type to a variable
+
+変数に型を指定することもできる
+
+> **Syntax**  
+> 変数名::型
+
+```hs:sample.hs
+name::String
+pin::Integer
+name = "Krishna"
+pin = 123456
+```
+
+```bash
+*Main> name
+"Krishna"
+*Main> pin
+123456
+
+*Main> t: name # :tは変数の型が見れる
+name::String
+
+*Main> :t pin
+pin::Integer
+```
+
+以下のように型定義と値を１行にまとめることも可能
+
+```hs:sample.hs
+name = "Krishna"::String
+pin = 123456::Integer
+```
+
+もし全部の変数が同じ型だったら、その場合はそれらを同じ行でまとめて定義できる。
+
+```hs:sample.hs
+a, b, c, d :: Integer
+e, f :: String
+
+a = 10
+b = 11
+c = 12
+d = 13
+
+e = "ptr"
+f = "nayan"
+```
+
+- GHCiの拡張昨日であるScopedTypeVariablesを有効にすると、異なる型の変数であっても同じ行にまとめて書くこともできる。
+
+```sample.hs
+{-# LANGUAGE ScopedTypeVariables #-}
+
+(empId::Integer, name::String, salary::Double) = (10, "Sudhir", 5.7)
+```
+
+# Haskell: Comments
+
+- コメントはコードを綺麗に文書かするために使う。
+- Haskellはコメントについて２種類の書き方がある。
+
+## 1行コメント
+
+1行コメントは `--` から始まり、行の最後までがコメントになる。
+
+## 複数行コメント
+
+複数行コメントは `{- ... -}`の間に記述できる。
+
+
+
+
+
+
+
+
+
+
 
