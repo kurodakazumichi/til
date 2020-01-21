@@ -1,0 +1,4 @@
+# Laravelのインストール
+
+LaravelはComposerを使ってインストールするので
+まずComposerを使えるようにしておく。
