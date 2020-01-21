@@ -34,4 +34,24 @@ PHP拡張の`ext-zip`が入ってないとのこと。
 `ext-zip`は`brew`でいれるのが主流っぽいが
 PHPはmacのデフォルトのやつなのでなんか気持ち悪い。
 
-まずは`brew`でPHPを入れ直そう。
+まずは`brew`でPHPを入れ直そう。  
+[PHPの入れ直しはこちら](https://github.com/kurodakazumichi/til/blob/master/Mac/php%E3%81%AE%E5%B0%8E%E5%85%A5.md)
+
+無理だろうけど、一応もう一度Laravelインストーラーの入手にチャレンジ
+
+以下を実行
+```bash
+composer global require laravel/installer
+```
+
+あれ、インストールできちゃった。
+(PHP@7.3を入れただけだけど、拡張も含まれてたんかな？)
+
+わからない、まだ油断は禁物
+
+# larabelインストーラーにパスを通す
+
+`~/.composer/vender`に各種パッケージが入ってるのでここにパスを通す
+`echo 'export PATH=$PATH:$HOME/.composer/vendor/bin' >> ~/.bash_profile`
+
+
