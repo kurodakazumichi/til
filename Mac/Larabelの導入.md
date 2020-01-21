@@ -54,4 +54,13 @@ composer global require laravel/installer
 `~/.composer/vender`に各種パッケージが入ってるのでここにパスを通す
 `echo 'export PATH=$PATH:$HOME/.composer/vendor/bin' >> ~/.bash_profile`
 
+# 試しにLaravel
 
+```bash
+cd ~/
+laravel new blog
+cd blog
+
+# 開発サーバー起動
+php artisan serve
+```
