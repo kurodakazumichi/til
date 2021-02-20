@@ -362,9 +362,12 @@ struct SurfaceOutput {
 
 ## 基本的な関数
 
-| 関数名   | 例          | 説明               |
-| -------- | ----------- | ------------------ |
-| saturate | saturate(x) | xを0 ~ 1にクランプ |
-| dot      | dot(v1, v2) | ベクトルの内積     |
-| pow      | pow(x, n)   | xをn乗する         |
+| 関数名   | 例          | 説明                   |
+| -------- | ----------- | ---------------------- |
+| saturate | saturate(x) | xを0 ~ 1にクランプ     |
+| dot      | dot(v1, v2) | ベクトルの内積         |
+| pow      | pow(x, n)   | xをn乗する             |
+| frac     | frac(x)     | 小数値の小数部分を返す |
+| floor    | floor(x)    | 小数値の整数部分を返す |
+| sin      | sin(x)      | sin関数                |
 

@@ -1,0 +1,1 @@
+- ShaderGraphを使うにはUnityプロジェクト生成時にUniversalRenderingPipelineプロジェクトとして作成する
