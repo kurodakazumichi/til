@@ -159,3 +159,28 @@ function setupBingo(&$bingo) {
 
 ```
 
+## ランダムな文字列を作るサンプル
+
+```php
+// ランダムな半角英数字を1文字作る関数
+function makeRandomChar() {
+    $chars = array_merge(range('a','z'), range('0','9'),range('A','Z'));
+    // 小文字アルファベットは26個 + 大文字アルファベット 26個 + 数値が10個
+    // 合計で62個あるので、$chars[0] ~ $chars[61]のどれか1つをランダムに取得
+    $index = rand(0, 61);
+    return $chars[$index];
+}
+
+// ランダム桁数のランダム文字列を作る関数
+function makeRandomWard() {
+    $count = rand(1, 10); // 文字の桁数をランダムにきめる
+    $word = "";
+    for($i = 0; $i < $count; ++$i) {
+        $word = $word . makeRandomChar(); // ランダムな1文字を連結する
+    }
+    return $word;
+}
+
+// この関数呼ぶだけでランダム文字列が取得できます
+$word = makeRandomWord();
+```
