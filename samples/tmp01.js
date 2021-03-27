@@ -61,13 +61,14 @@ $(function () {
   }
 
   const anim9 = () => {
-    sec2.animate({top:'0%','opacity':1},0,'easeInOutExpo',function(){
-      wrap4.animate({top:'0%'},UpperVelocity01,'easeInOutBack');
-      wrap5.animate({top:'33%'},UpperVelocity02,'easeInOutBack');
-      wrap6.animate({top:'66%'},UpperVelocity03,'easeInOutBack');
-    });
+    sec2.animate({top:'0%','opacity':1},0,'easeInOutExpo',anim10);
   };
 
+  const anim10  = () => {
+    wrap4.animate({top:'0%'},UpperVelocity01,'easeInOutBack');
+    wrap5.animate({top:'33%'},UpperVelocity02,'easeInOutBack');
+    wrap6.animate({top:'66%'},UpperVelocity03,'easeInOutBack');
+  }
 
   anim1();
 });
