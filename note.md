@@ -138,3 +138,37 @@ int main(void)
   return 0;
 }
 ```
+
+version 5.0
+
+```c
+// 文字列に重複あるかチェックする関数
+int isContainDeplicates(char* str);
+
+int main(void)
+{
+  char str[1000];
+  fgets(str, sizeof(str), stdin);
+
+  // 重複なしなら"OK"、重複ありなら"NG"
+  printf((isContainDeplicates(str) == 0)? "OK" : "NG");
+
+  return 0;
+}
+
+int isContainDeplicates(char* str) 
+{
+  int result = 0;
+
+  for (int i = 0; str[i] != '\0'; ++i) {
+    for (int j = i + 1; str[j] != '\0'; ++j) {
+      if (str[i] == str[j]) {
+        result = 1;
+        break;
+      }
+    }
+  }
+
+  return result;
+}
+```
