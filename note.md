@@ -55,10 +55,12 @@ int main(void) {
   for (l = 0; str[l] != '\0'; ++l);
 
   for (int i = 0; i < l; ++i) {
+    if (result == 1) break;
+    
     for (int j = i + 1; j < l; ++j) {
       if (str[i] == str[j]) {
         result = 1;
-				break;
+	break;
       }
     }
   }
@@ -88,6 +90,8 @@ int main(void)
 
   for (int i = 0; str[i] != '\0'; ++i) {
     for (int j = i + 1; str[j] != '\0'; ++j) {
+      if (result == 1) break;
+      
       if (str[i] == str[j]) {
         result = 1;
         break;
@@ -118,8 +122,7 @@ int isContainDeplicates(char* str)
   for (int i = 0; str[i] != '\0'; ++i) {
     for (int j = i + 1; str[j] != '\0'; ++j) {
       if (str[i] == str[j]) {
-        result = 1;
-        break;
+        return 1;
       }
     }
   }
@@ -163,8 +166,7 @@ int isContainDeplicates(char* str)
   for (int i = 0; str[i] != '\0'; ++i) {
     for (int j = i + 1; str[j] != '\0'; ++j) {
       if (str[i] == str[j]) {
-        result = 1;
-        break;
+        return 1;
       }
     }
   }
