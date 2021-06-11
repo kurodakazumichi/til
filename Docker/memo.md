@@ -9,6 +9,7 @@
 | ボリューム     | DockerEngine上に確保したストレージ領域のようなもの           |
 | ネットワーク   | DockerEngineが管理するネットワーク                           |
 | Docker Compose | 複数のコンテナを管理する仕組み                               |
+| Docker Hub     | Dockerイメージを管理するクラウドサービス                     |
 
 
 
@@ -156,6 +157,15 @@ docker container exec -it [コンテナ名 or コンテナID] [コマンド]
 
 
 
+```
+# コンテナからイメージを生成する
+docker commit [コンテナ名] [イメージ名]
+```
+
+
+
+
+
 ## Image コマンド
 
 docker imageに関するコマンド
@@ -198,6 +208,57 @@ docker image rm [イメージ名 or イメージID]
 
 
 
+```
+# dockerイメージの履歴を確認する
+docker image history [イメージ名]
+```
+
+
+
+```
+# Dockerfileからイメージを作成する
+docker image build -t [イメージ名:タグ] [Dockerfileのあるパス] [--no-cache]
+
+# Dockerfileのあるフォルダなら以下のようなコマンドになる
+docker image build -t sample .
+
+# buildで実行されたコマンドはキャッシュされるので、キャッシュしたくない場合はオプションを指定する
+docker image build -t sample . --no-cache
+```
+
+
+
+```
+# dockerイメージをファイル化する
+docker image save -o [ファイル名] [イメージ名]
+```
+
+
+
+```
+# ファイル化したイメージを読み込む
+docker image load -i [ファイル名]
+```
+
+
+
+```
+# dockerイメージの名前を変える
+docker image tag [変更前のイメージ名:タグ名] [変更後のイメージ名:タグ名]
+```
+
+
+
+```
+# dockerイメージをDocker Hubに登録する
+# ID/イメージ名はDocker Hubのアカウント、リポジトリ名に一致させること
+docker image push [ID/イメージ名]
+```
+
+
+
+
+
 ## Volumeコマンド
 
 | 利用度 | コマンド | 解説                                                   |
@@ -222,6 +283,22 @@ docker volume create --name [ボリューム名]
 
 
 
+## Docker Hub
+
+```
+# docker hubにログインする
+docker login
+```
+
+
+
+```
+# docker hubからログアウトする
+docker logout
+```
+
+
+
 
 
 
@@ -236,14 +313,18 @@ docker volume create --name [ボリューム名]
 
 ## 省略コマンド
 
-| 完全                   | 省略         |
-| ---------------------- | ------------ |
-| docker container run   | docker run   |
-| docker container ps    | docker ps    |
-| docker container start | docker start |
-| docker container stop  | docker stop  |
-| docker container logs  | docker logs  |
-| docker image rm        | docker rmi   |
+| 完全                   | 省略           |
+| ---------------------- | -------------- |
+| docker container run   | docker run     |
+| docker container ps    | docker ps      |
+| docker container start | docker start   |
+| docker container stop  | docker stop    |
+| docker container logs  | docker logs    |
+| docker image rm        | docker rmi     |
+| docker image history   | docker history |
+| docker image build     | docker build   |
+| docker image save      | docker save    |
+| docker image load      | docker load    |
 
 
 
