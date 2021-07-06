@@ -61,3 +61,6 @@ Next.jsには、TypeScriptのサポートが組み込まれています。
 ### Customizing Babel Config (Advanced)
 
 babelの設定をカスタマイズすることができます。
+
+
+
