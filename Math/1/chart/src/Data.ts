@@ -4,7 +4,7 @@ export default class Data
    * データ配列
    */
   private datas:number[];  
-  
+
   /**
    * コンストラクタ
    * @param datas データ配列
@@ -48,10 +48,6 @@ export default class Data
   get avg() 
   {
     const { total, magnitude } = this;
-
-    // データの大きさが0の時は未定義
-    if (magnitude <= 0) return undefined;
-
     return total / magnitude;
   }
 
@@ -107,6 +103,96 @@ export default class Data
   }
 
   /**
+   * 範囲
+   * データの最大値と最小値の差
+   */
+  get range() {
+    const { min, max } = this;
+    return max - min;
+  }
+
+  /**
+   * 第1四分位数
+   */
+  get q1() {
+    const { datas, magnitude } = this;
+
+    // 大きさが奇数のとき
+    if (magnitude % 2 !== 0) {
+      const index = (magnitude - 1) / 2;
+      return new Data(datas.slice(0, index)).median;
+    } else {
+      const index = magnitude / 2;
+      return new Data(datas.slice(0, index)).median;
+    }
+  }
+
+  /**
+   * 第2四分位数 Q2
+   */
+  get q2() {
+    return this.median;
+  }
+
+  /**
+   * 第3四分位数
+   */
+  get q3() {
+    const { datas, magnitude } = this;
+
+    if (magnitude % 2 !== 0) {
+      const index = (magnitude - 1) / 2;
+      return new Data(datas.slice(index + 1)).median;
+    } else {
+      const index = magnitude / 2;
+      return new Data(datas.slice(index)).median;
+    }
+  }
+
+  /**
+   * 四分位範囲
+   */
+  get quartileRange () {
+    return this.q3 - this.q1;
+  }
+
+  /**
+   * 四分位偏差
+   */
+  get quartileDeviation() {
+    return this.quartileRange / 2;
+  }
+
+  /**
+   * 分散
+   * データの偏差の二乗の平均値。
+   */
+  get variance() 
+  {
+    const { datas, avg, magnitude } = this;
+
+    const s =  datas.reduce((sum, x) => 
+    {
+      // 偏差
+      const div = x - avg;
+
+      // 偏差の二乗の総和
+      sum += div * div;
+      return sum;
+    }, 0);
+
+    return s / magnitude;
+  }
+
+  /**
+   * 標準偏差
+   * 分散の正の平方根
+   */
+  get standardDeviation() {
+    return Math.sqrt(this.variance);
+  }
+
+  /**
    * 昇順でソート
    */
   private sort() {
@@ -125,5 +211,11 @@ export default class Data
     console.log(`平均値:${this.avg}`);
     console.log(`最頻値:${this.mode}`);
     console.log(`中央値:${this.median}`);
+    console.log(`範囲:${this.range}`);
+    console.log(`Q1:Q2:Q3 = ${this.q1}:${this.q2}:${this.q3}`);
+    console.log(`四分位範囲:${this.quartileRange}`);
+    console.log(`四分位偏差:${this.quartileDeviation}`);
+    console.log(`分散:${this.variance}`);
+    console.log(`標準偏差:${this.standardDeviation}`);
   }
 }
