@@ -23,10 +23,10 @@ export default class FrequencyTable
    * @param {number} start 開始値
    * @param {number} width 階級の幅
    */
-  constructor(start:number, width:number) {
+  constructor(start:number, width:number, ranks:number[] = []) {
     this.start = start; // 開始値
     this.width = width; // 階級の幅
-    this.ranks = [];    // 階級
+    this.ranks = ranks; // 階級
   }
 
   /**
@@ -47,7 +47,7 @@ export default class FrequencyTable
       if (num < this.start) return;
       this.ranks[this.calcRank(num)]++;
     });
-  }  
+  }
 
   /**
    * 数値が所属する階級のindexを計算する

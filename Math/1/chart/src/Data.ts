@@ -63,15 +63,15 @@ export default class Data
 
     // データの大きさが奇数のときは真ん中の値を返す
     if (magnitude % 2 !== 0) {
-      const idx = (magnitude + 1) / 2;
-      return this.datas[idx];
+      const idx = Math.floor(magnitude / 2);
+      return datas[idx];
     }
 
     // データが偶数の時は中央の2つの値の平均を中央値とする
     else {
-      const idx1 = magnitude / 2;
+      const idx1 = (magnitude / 2) - 1;
       const idx2 = idx1 + 1;
-      return (this.datas[idx1] + this.datas[idx2]) / 2;
+      return (datas[idx1] + datas[idx2]) / 2;
     }
   }
 
