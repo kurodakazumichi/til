@@ -3,15 +3,19 @@ export default class Data
   /**
    * データ配列
    */
-  private datas:number[];  
+  private _datas:number[];  
 
   /**
    * コンストラクタ
    * @param datas データ配列
    */
   constructor(datas:number[] = []) {
-    this.datas = datas;
+    this._datas = datas;
     this.sort();
+  }
+
+  get datas() {
+    return this._datas;
   }
 
   /**
