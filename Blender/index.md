@@ -16,8 +16,8 @@ https://youtu.be/h30ZJQrb4s8?si=xBOdI7a4TqzUoHa1
 - Blender 基本 UV アンラップチュートリアル（ドーナツパート 6）
 https://youtu.be/yxAqN8TzFbo?si=dKly5WAS3MAmYDl2
 
-- https://youtu.be/_-QsGTL7pS0?si=i59jNbtUpFUroKMJ
-Blender 5.0 で散布する方法（ドーナツ パート 7）
+- Blender 5.0 で散布する方法（ドーナツ パート 7）
+https://youtu.be/_-QsGTL7pS0?si=i59jNbtUpFUroKMJ
 
 - Blender のライティングとレンダリングの基礎 (Donut Finale)
 https://youtu.be/WobATxh3i-g?si=NGfWA9ZhC2WgYQxG
